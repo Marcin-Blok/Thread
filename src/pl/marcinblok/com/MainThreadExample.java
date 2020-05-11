@@ -4,7 +4,7 @@ public class MainThreadExample {
 
 	public static void main(String[] args) throws InterruptedException {
 		Thread mainThread = Thread.currentThread();
-		mainThread.setName("To jest w¹tek g³ówny");
+		mainThread.setName("To jest wÄ…tek gÅ‚Ã³wny");
 		
 		MyThread myThread = new MyThread();
 		myThread.t.start();

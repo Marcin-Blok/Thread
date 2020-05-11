@@ -1,16 +1,16 @@
 package pl.marcinblok.com;
 
 public class MyThread implements Runnable {
-Thread t;
-	
+	Thread t;
+
 	public MyThread() {
-		t = new Thread(this, "w¹tek pochodny");
+		t = new Thread(this, "wÄ…tek pochodny");
 	}
-	
+
 	@Override
 	public void run() {
-		for(int i = 0; i<10; i++) {
-			System.out.println(t.getName()+" : "+i);
+		for (int i = 0; i < 10; i++) {
+			System.out.println(t.getName() + " : " + i);
 			try {
 				t.sleep(500);
 			} catch (InterruptedException e) {
