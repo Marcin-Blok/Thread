@@ -6,10 +6,10 @@ import pl.marcinblok.com.Working;
 public class PriorityExample {
 
 	public static void main(String[] args) {
-		Working gotuje = new Working("Praca - gotujÄ™", Thread.MIN_PRIORITY);
-		Shopping spozywcze = new Shopping("Zakupy - spoÅ¼ywcze", Thread.MAX_PRIORITY);
+		Working gotuje = new Working("Praca - gotujê", Thread.MIN_PRIORITY);
+		Shopping spozywcze = new Shopping("Zakupy - spo¿ywcze", Thread.MAX_PRIORITY);
 		Shopping ubrania = new Shopping("Zakupy - ubrania",Thread.NORM_PRIORITY);
-		Working sprzatam = new Working("Praca - sprzÄ…tam", 10);
+		Working sprzatam = new Working("Praca - sprz¹tam", 10);
 
 		spozywcze.t.start();
 		ubrania.t.start();
@@ -22,7 +22,7 @@ public class PriorityExample {
 			sprzatam.t.join();
 			gotuje.t.join();
 		} catch (InterruptedException e) {
-			System.out.println("WÄ…tek przerwany.");
+			System.out.println("W¹tek przerwany.");
 		}
 
 		System.out.println("Koniec programu.");

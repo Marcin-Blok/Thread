@@ -4,7 +4,7 @@ import pl.marcinblok.com.MyThreadExtendsMethod;
 
 public class ExtendsMethodThreadExample {
 	public static void main(String[] args) {
-		MyThreadExtendsMethod myThreadExtendsMethod = new MyThreadExtendsMethod("MÃ³j wÄ…tek");
+		MyThreadExtendsMethod myThreadExtendsMethod = new MyThreadExtendsMethod("Mój w¹tek");
 		myThreadExtendsMethod.start();
 	}
 }
