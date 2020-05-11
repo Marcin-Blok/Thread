@@ -4,7 +4,7 @@ public class MyThread implements Runnable {
 	public Thread t;
 
 	public MyThread() {
-		t = new Thread(this, "wÄ…tek pochodny");
+		t = new Thread(this, "w¹tek pochodny");
 	}
 
 	@Override

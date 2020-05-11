@@ -5,10 +5,10 @@ import pl.marcinblok.com.Working;
 
 public class OrderExample {
 	public static void main(String[] args) {
-		Working gotuje = new Working("Praca - gotujÄ™");
-		Shopping spozywcze = new Shopping("Zakupy - spoÅ¼ywcze");
+		Working gotuje = new Working("Praca - gotuj¹");
+		Shopping spozywcze = new Shopping("Zakupy - spo¿ywcze");
 		Shopping ubrania = new Shopping("Zakupy - ubrania");
-		Working sprzatam = new Working("Praca - sprzÄ…tam");
+		Working sprzatam = new Working("Praca - sprz¹tam");
 		
 		try {
 			spozywcze.t.start();
@@ -21,7 +21,7 @@ public class OrderExample {
 			sprzatam.t.join();
 			gotuje.t.join();
 		} catch (InterruptedException e) {
-			System.out.println("WÄ…tek przerwany.");
+			System.out.println("W¹tek przerwany.");
 		}
 
 		System.out.println("Koniec programu.");
