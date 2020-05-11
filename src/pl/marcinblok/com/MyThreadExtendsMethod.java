@@ -2,7 +2,7 @@ package pl.marcinblok.com;
 
 public class MyThreadExtendsMethod extends Thread {
 
-	MyThreadExtendsMethod(String name) {
+	public MyThreadExtendsMethod(String name) {
 		super(name);
 	}
 

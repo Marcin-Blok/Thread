@@ -1,4 +1,6 @@
-package pl.marcinblok.com;
+package pl.marcinblok.com.examples;
+
+import pl.marcinblok.com.IncrementThread;
 
 public class MultiThreadExample {
 	public static void main(String[] args) {

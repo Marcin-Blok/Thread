@@ -1,7 +1,7 @@
 package pl.marcinblok.com;
 
 public class IncrementThread implements Runnable {
-	Thread t;
+	public Thread t;
 
 	public IncrementThread(String name) {
 		t = new Thread(this, "increment thread " + name);
