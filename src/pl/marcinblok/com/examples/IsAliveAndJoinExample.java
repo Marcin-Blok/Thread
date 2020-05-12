@@ -8,15 +8,15 @@ public class IsAliveAndJoinExample {
 		myThread.t.start();
 		
 		do {
-			System.out.println("w¹tek poboczny uruchomiony.");
+			System.out.println("WÄ…tek poboczny uruchomiony.");
 		} while (myThread.t.isAlive());
 		
 		try {
 			myThread.t.join();
 		} catch (InterruptedException e) {
-			System.out.println("w¹tek przerwany.");
+			System.out.println("WÄ…tek przerwany");
 		}
 		
-		System.out.println("Koniec w¹tku g³ównego.");
+		System.out.println("Koniec wÄ…tku gÅ‚Ã³wnego.");
 	}
 }
