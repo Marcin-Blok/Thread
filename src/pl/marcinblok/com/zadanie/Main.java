@@ -20,31 +20,53 @@ public class Main {
 		ThreadFloorLaying room3FloorLaying = new ThreadFloorLaying("Układanie podłogi - Pokój 3", 30);
 		ThreadDoorMounting room3DoorMounting = new ThreadDoorMounting("Door Mounting - Pokój 3", 10);
 		
+		long startTime = System.currentTimeMillis();
 		
 		room1Painting.t.start();
 		room2Painting.t.start();
 		room3Painting.t.start();
 		
-		
 		try {
-		room1Painting.t.join();
-		room1FloorLaying.t.start();
-		room1FloorLaying.t.join();
-		room1DoorMounting.t.start();
-		room1DoorMounting.t.join();
-		room2FloorLaying.t.start();
-		room2FloorLaying.t.join();
-		room2DoorMounting.t.start();
-		room2DoorMounting.t.join();
-		room3FloorLaying.t.start();
-		room3FloorLaying.t.join();
-		room3DoorMounting.t.start();
-		room3DoorMounting.t.join();
-		} catch (InterruptedException e1) {
-			System.out.println("Wątek przerwany");
-			e1.printStackTrace();
+			room1Painting.t.join();
+			room2Painting.t.join();
+			room3Painting.t.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
+		
+		room1FloorLaying.t.start();			
+		room2FloorLaying.t.start();		
+		room3FloorLaying.t.start();	
+		
+		try {
+			room1FloorLaying.t.join();
+			room2FloorLaying.t.join();		
+			room3FloorLaying.t.join();	
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
+		
+		
+		room1DoorMounting.t.start();			
+		room2DoorMounting.t.start();	
+		room3DoorMounting.t.start();
+		
+		try {
+			room1DoorMounting.t.join();
+			room2DoorMounting.t.join();	
+			room3DoorMounting.t.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("Czas wykonywania remontu: "+(endTime-startTime));
+		// pierwszy test - 15790
 		System.out.println(mainThread.getName() + " Koniec");
 	}
 
