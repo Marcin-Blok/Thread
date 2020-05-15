@@ -32,7 +32,7 @@ public class Product {
 		return "Product [name=" + name + ", price=" + price + ", discount=" + "]";
 	}
 
-	public void makeDiscount() {
+	public synchronized void makeDiscount() {
 //		System.out.println("Produkt - "+name);
 //		System.out.println("zmieniam cenę");
 		price = price - 200;

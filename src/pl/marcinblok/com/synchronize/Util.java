@@ -5,6 +5,10 @@ public class Util {
 	private static int MIN = 100;
 	private static String chars = "qwertyuiopasdfghjklzxcvbnm";
 
+	public static Book generateBook() {
+		return new Book(generateName());
+	}
+	
 	public static Product generateProduct() {
 		return new Product(generateName(), generatePrice());
 	}
