@@ -3,7 +3,6 @@ package pl.marcinblok.com.synchronize;
 public class Product {
 	private String name;
 	private int price;
-	private boolean discount;
 
 	public Product(String name, int price) {
 		super();
@@ -27,17 +26,10 @@ public class Product {
 		this.price = price;
 	}
 
-	public synchronized boolean isDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(boolean discount) {
-		this.discount = discount;
-	}
 
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", price=" + price + ", discount=" + discount + "]";
+		return "Product [name=" + name + ", price=" + price + ", discount=" + "]";
 	}
 
 	public synchronized void makeDiscount() {
@@ -50,8 +42,6 @@ public class Product {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		discount = true;
-//		System.out.println("Zmieniłem.");
 	}
 
 }

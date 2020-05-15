@@ -1,17 +1,20 @@
 package pl.marcinblok.com.synchronize;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class Main {
 	public static void main(String[] args) {
-		List<Product> products = new ArrayList<>();
+		
 		List<Integer> prices = new ArrayList<>();
+		ArrayDeque<Product> products = new ArrayDeque<>();
 
-		int numberOfProducts = 5000;
+		int numberOfProducts = 500;
 
 		for (int i = 0; i < numberOfProducts; i++) {
-			products.add(Util.generateProduct());
+			products.addFirst(Util.generateProduct());
 		}
 
 		for (Product product : products) {
@@ -51,15 +54,15 @@ public class Main {
 		
 		long endTime = System.currentTimeMillis();
 		
-//		for (int i = 0; i < products.size(); i++) {
-//			if ((products.get(i).getPrice() + 200) != prices.get(i)) {
-//				System.out.println("Nie jest równe");
-//			}
-//		}
-//
-//		for (Product product : products) {
-//			System.out.println(product);
-//		}
+		for (int i = 0; i < products.size(); i++) {
+			if ((products.peek().getPrice() + 200) != prices.get(i)) {
+				System.out.println("Nie jest równe");
+			}
+		}
+
+		for (Product product : products) {
+			System.out.println(product);
+		}
 		
 		System.out.println("Czas wykonania pracy: "+(endTime-startTime));
 	}
