@@ -3,11 +3,11 @@ package pl.marcinblok.com.synchronize;
 import java.util.ArrayDeque;
 import java.util.List;
 
-public class PrepareDiscount implements Runnable{
-	
+public class PrepareDiscount implements Runnable {
+
 	Thread t;
 	ArrayDeque<Product> products;
-	
+
 	public PrepareDiscount(String employeeName, ArrayDeque<Product> products) {
 		t = new Thread(this, employeeName);
 		this.products = products;
@@ -15,13 +15,13 @@ public class PrepareDiscount implements Runnable{
 
 	@Override
 	public void run() {
-		for(Product product : products) {
-			do {
-				products.poll();
+		do {
+			Product product = products.poll();
+			if(product != null) {
 				product.makeDiscount();
-			}while(product != null);
-		}
-		
+//				System.out.println(product);
+			}
+		} while (!products.isEmpty());
 	}
 
 }
